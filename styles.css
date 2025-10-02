@@ -1,0 +1,308 @@
+:root {
+    /* USIU Brand Colors */
+    --usiu-blue: #004d9c; /* Primary Accent */
+    --usiu-yellow: #ffc72c; /* Secondary Accent */
+    --text-dark: #1f1f1f;
+    --text-light: #ffffff;
+    --background-light: #ffffff;
+    --background-dark: #1f1f1f;
+
+    /* Dynamic Colors (Initial State: Light/Day) */
+    --accent: var(--usiu-blue);
+    --body-bg: var(--background-light);
+    --body-color: var(--text-dark);
+    --card-bg: #f5f5f5; /* Light grey for content cards */
+    --border-color: #ddd;
+}
+
+/* Base Styles */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 1rem 1.25rem;
+    background: var(--body-bg);
+    color: var(--body-color);
+    font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu;
+    transition: background-color 0.3s, color 0.3s; /* Smooth theme transition */
+}
+
+/* 1 & 2. Header and Navigation Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--usiu-yellow);
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    max-width: 50px; 
+    height: auto;
+    margin-right: 1rem;
+}
+
+h1 {
+    color: var(--accent);
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.header-nav {
+    display: none; /* Hide nav on small screens for cleaner mobile header */
+}
+
+.header-nav a {
+    text-decoration: none;
+    color: var(--accent);
+    font-weight: bold;
+    margin-left: 1rem;
+    padding: 0.5rem;
+    transition: color 0.2s;
+}
+
+.header-nav a:hover {
+    color: var(--usiu-yellow);
+    border-bottom: 2px solid var(--usiu-yellow);
+}
+
+/* Typography & Section Layout */
+h2 {
+    margin: 1.5rem 0 0.8rem;
+    border-bottom: 2px solid var(--usiu-yellow); /* Secondary accent under headings */
+    padding-bottom: 0.2rem;
+    color: var(--accent);
+}
+
+section {
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+}
+
+/* Buttons */
+.actions {
+    margin-bottom: 1.5rem;
+}
+
+button {
+    padding: 0.75rem 1.5rem;
+    margin-right: 0.5rem;
+    border: 0;
+    border-radius: 0.4rem;
+    background: var(--accent);
+    color: var(--text-light);
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background: var(--usiu-yellow);
+    color: var(--text-dark);
+}
+
+/* 3. Welcome Grid & Bordered Message */
+.welcome-grid {
+    display: grid;
+    gap: 1.5rem;
+    padding-top: 1rem;
+}
+
+.welcome-text {
+    padding: 1.5rem;
+    border: 4px solid var(--usiu-yellow); /* Thick, eye-catching border */
+    border-radius: 0.75rem; /* Rounded corners */
+    background-color: var(--card-bg); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Stronger shadow */
+}
+
+.welcome-text p {
+    margin: 0;
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--body-color);
+}
+
+.welcome-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    object-fit: cover;
+}
+
+/* 5. Academic Grid (3-Grid Layout) */
+.academic-grid {
+    display: grid;
+    gap: 1.5rem;
+    padding-top: 1rem;
+}
+
+/* Card Styling for Grids */
+.card {
+    background: var(--card-bg);
+    padding: 1rem;
+    border-radius: 0.4rem;
+    border-left: 5px solid var(--usiu-blue); /* Changed to Blue for academic items */
+    transition: background-color 0.3s;
+}
+
+.card h4 {
+    margin-top: 0;
+    color: var(--usiu-blue);
+}
+
+.card-link {
+    display: block;
+    margin-top: 1rem;
+    color: var(--usiu-blue);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* 7. Student Life Grid (2-Grid Layout) */
+.student-life-grid {
+    display: grid;
+    gap: 1.5rem;
+    padding-top: 1rem;
+}
+
+/* Preformatted Summary Section */
+pre {
+    background: var(--card-bg);
+    padding: 1rem;
+    border-radius: 0.4rem;
+    overflow: auto;
+    white-space: pre-wrap; 
+    font-family: monospace;
+    color: var(--body-color); 
+    border: 1px solid var(--border-color);
+    margin: 1rem 0;
+}
+
+/* Sample Budget Table - REVISED STYLING */
+.sample-budget {
+    width: 100%;
+    border-collapse: separate; 
+    border-spacing: 0;
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+    border: 1px solid var(--usiu-blue);
+    border-radius: 0.5rem;
+    overflow: hidden; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sample-budget th, .sample-budget td {
+    padding: 1rem 0.75rem;
+    text-align: left;
+    border-right: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.sample-budget th:last-child, .sample-budget td:last-child {
+    border-right: none;
+}
+
+.sample-budget th {
+    background-color: var(--usiu-blue);
+    color: var(--text-light);
+    font-weight: 600;
+    border-bottom: 2px solid var(--usiu-yellow);
+}
+
+/* Striped Rows */
+.sample-budget tbody tr:nth-child(odd) {
+    background-color: var(--card-bg); 
+}
+.sample-budget tbody tr:nth-child(even) {
+    background-color: var(--body-bg); 
+}
+
+.sample-budget .total td {
+    font-weight: bold;
+    background-color: var(--usiu-yellow); /* Highlight Total row */
+    color: var(--text-dark);
+    border-bottom: none;
+    font-size: 1.1em;
+}
+
+/* 8. Dropdown Styling (for Support and FAQs) */
+.dropdown-container {
+    padding-top: 0.5rem;
+}
+
+details {
+    margin-bottom: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.4rem;
+    background: var(--card-bg);
+}
+
+summary {
+    padding: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: var(--usiu-blue);
+    color: white;
+    border-radius: 0.4rem 0.4rem 0 0;
+    transition: background-color 0.2s;
+}
+
+summary:hover {
+    background-color: var(--accent); /* Darken slightly on hover */
+}
+
+details p {
+    padding: 1rem;
+    margin: 0;
+    border-top: 1px solid var(--border-color);
+    background: var(--body-bg);
+}
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    border-top: 1px solid #ccc;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+/* Media Queries for Grids (Desktop View) */
+@media (min-width: 768px) {
+    /* Show nav bar on desktop */
+    .header-nav {
+        display: block; 
+    }
+    
+    h1 { font-size: 2rem; }
+
+    /* 3. Welcome Grid: 2 columns */
+    .welcome-grid {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    /* 5. Academic Grid: 3 columns */
+    .academic-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* 7. Student Life Grid: 2 columns */
+    .student-life-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
