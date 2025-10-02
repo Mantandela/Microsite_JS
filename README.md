@@ -25,12 +25,7 @@ This v1 is built with **only vanilla JavaScript, HTML5, and CSS** — no framewo
 * **Debuggability** → all inputs and outputs are logged to the browser console.
 
 ## 🌐 Live Demo
-
-Once deployed, your site will be accessible at:
-
-```
-https://<your-github-username>.github.io/usiu-first-year-companion/
-```
+This site is live at: https://mantandela.github.io/prime-wigs-site-css-docker/
 
 ##  How to Run Locally
 
@@ -39,6 +34,16 @@ https://<your-github-username>.github.io/usiu-first-year-companion/
 3. On page load, you will be prompted for your name.
 4. Click **Run Estimator** to calculate your weekly budget.
 5. Click **Toggle Theme** to switch between day/night modes.
+   
+## The project was also containerized with Docker 
+ # Build t
+docker build -t usiu-first-year:v1 .
+# Run 
+docker run -p 8080:80 usiu-first-year:v1
+# Open in browser
+http://localhost:8080
+# Push
+docker push delmantan/usiu-first-year:v1
 
 ##  Known Limitations (v1)
 
@@ -56,7 +61,7 @@ https://<your-github-username>.github.io/usiu-first-year-companion/
 
 ##  Next Steps (v2/v3)
 
-* Replace `prompt()` with **forms or modals** for smoother input.
+* To Replace `prompt()` with **forms or modals** for smoother input.
 * Add a **monthly budget planner** with export options.
 * Implement **auto-theme switching** (based on system time).
 * Expand content to include **community forums and mentorship sign-up**.
